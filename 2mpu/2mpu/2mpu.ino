@@ -17,8 +17,8 @@ int rClick = 8;
 int shift = 7;
 int q = 6;
 int e = 10;
-int x = 15;
 int c = 14;
+int x = 15;
 int scroll = 5;
 int r = 16;
 int scrollStatus=1;
@@ -72,9 +72,12 @@ void setup(){
 }
 
 void loop(){
-  GetMpuValue(MPU1);
 
-  GetMpuValue(MPU2);
+  int shiftState = digitalRead(shift);
+  
+  GetMpuValue(MPU1, shiftState);
+
+  GetMpuValue(MPU2, shiftState);
  
 
   int lClickState = digitalRead(lClick);
@@ -90,13 +93,6 @@ void loop(){
   }
   else{
     Mouse.release(MOUSE_RIGHT);
-  }
-  int shiftState = digitalRead(shift);
-  if(shiftState == 1){
-    Keyboard.press(KEY_LEFT_SHIFT);
-  }
-  else{
-    Keyboard.release(KEY_LEFT_SHIFT);
   }
   int qState = digitalRead(q);
   if(qState == 1){
@@ -152,7 +148,7 @@ void loop(){
 
 }
 
-void GetMpuValue(const int MPU){
+void GetMpuValue(const int MPU, int shiftState){
 
   previousTime = currentTime;        
   currentTime = millis();            
@@ -193,11 +189,15 @@ void GetMpuValue(const int MPU){
     }
     prev0 = gForceY;
   }
+  Serial.println(shiftState);
+  if(shiftState==1){
+    Serial.print("shouldnt move");
+  }
   else if(MPU == 104 && (yawDiff)<-.01){
      Mouse.move(-10, 0);
   }
   else if(MPU == 104 && (yawDiff)>0.01){
-     Mouse.move(5, 0);
+     Mouse.move(15, 0);
   }
     prev1 = gForceY;
     yaw2prev = yawPrev;

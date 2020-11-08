@@ -1,12 +1,16 @@
 #include <Mouse.h>
 #include <Keyboard.h>
 
+// 
+
 int w = 4;
 int a = 5;
 int s = 6;
 int d = 7;
 int crouch = 8;
 int jump = 9;
+
+//
 
 void setup() {
   Keyboard.begin();
@@ -26,7 +30,6 @@ void loop() {
   else{
     Keyboard.release('w');   
   }
-
   int aState = digitalRead(a);
   if(aState == 1){
   Keyboard.press('a');
@@ -34,7 +37,6 @@ void loop() {
   else{
     Keyboard.release('a');   
   }
-
   int sState = digitalRead(s);
   if(sState == 1){
   Keyboard.press('s');
@@ -42,7 +44,6 @@ void loop() {
   else{
     Keyboard.release('s');   
   }
-
   int dState = digitalRead(d);
   if(dState == 1){
   Keyboard.press('d');
@@ -50,17 +51,15 @@ void loop() {
   else{
     Keyboard.release('d');   
   }
-  
-  int crouchState = digitalRead(crouch);
-  if(crouchState == 1){
+  int cState = digitalRead(crouch);
+  if(cState == 1){
   Keyboard.press(KEY_LEFT_CTRL);
   }
   else{
     Keyboard.release(KEY_LEFT_CTRL);   
   }
-
-  int jumpState = digitalRead(jump);
-  if(jumpState == 1){
+  int jState = digitalRead(jump);
+  if(jState == 1){
   Keyboard.press((char)0x20);
   }
   else{
