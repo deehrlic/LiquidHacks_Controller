@@ -3,6 +3,7 @@ Created for LiquidHacks2020 by Corey DuVal, Derreck Frey, Drew Ehrlich, and Nick
 
 ## File Structure
 wasdcj/wasdcj.ino is the code for the bottom pedals that control movement
+
 2mpu/2mpu/2mpu.ino is the code that lives on the inside of the blaster and controls cursor movement and monitors button presses
 
 ## Usage
