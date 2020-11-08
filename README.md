@@ -1,4 +1,5 @@
-# LiquidHacks_Controller
+# R.A.N.G.E: Riot Associated Nerf Gun Experience
+Created for LiquidHacks2020 by Corey DuVal, Derreck Frey, Drew Ehrlich, and Nick Adair
 
 ## File Structure
 wasdcj/wasdcj.ino is the code for the bottom pedals that control movement
