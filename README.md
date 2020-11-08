@@ -1,6 +1,10 @@
 # LiquidHacks_Controller
 
-##Usage
+## File Structure
+wasdcj/wasdcj.ino is the code for the bottom pedals that control movement
+2mpu/2mpu/2mpu.ino is the code that lives on the inside of the blaster and controls cursor movement and monitors button presses
+
+## Usage
 Load both Arduinos with their respective code one at a time, and make sure your wiring is set up correctly.
 
 ## Inspiration
